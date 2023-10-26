@@ -21,7 +21,7 @@ param identityName string = 'federated-management-uami'
 // @description('The audience for the federated credential')
 // param aud string = 'api://AzureADTokenExchange'
 
-var oidcConfiguration = loadJsonContent('federatedIdentityCredentialConfiguration.json')
+var oidcConfiguration = loadJsonContent('../federatedIdentityCredentialConfiguration.json')
 
 module resourceGroupModule './nestedTemplates/0-resourceGroup.bicep' = {
   name: 'resourceGroupDeployment'
