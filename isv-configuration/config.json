@@ -1,0 +1,39 @@
+{
+  "publisher": {
+    "aadTenantId": "5f9e748d-300b-48f1-85f5-3aa96d6260cb",
+    "subscriptionId": "9838302b-c9ac-4e97-8b61-101b52f6b961",
+    "resourceGroup": "customer-connection",
+    "location": "westeurope",
+    "optional": {
+      "storageAccountName": "k5jl6cugzhroo4",
+      "containerName": "public",
+      "keyVaultName": "massdriveridp"
+    },
+    "idp": {
+      "issuer": "https://k5jl6cugzhroo4.blob.core.windows.net/public",
+      "keyUri": "https://massdriveridp.vault.azure.net/keys/idpkey",
+      "keyJson": {
+        "crv": null,
+        "d": null,
+        "dp": null,
+        "dq": null,
+        "e": "AQAB",
+        "k": null,
+        "keyOps": [
+          "sign"
+        ],
+        "kid": "https://massdriveridp.vault.azure.net/keys/idpkey/fb6767b65d8b418fae2f31bd9cf790ba",
+        "kty": "RSA",
+        "n": "yresY5l0EOiJLd3/rhEpUEsbb8KCKQt05LQh9VJWoL3BNUahHr+TqtanQVsq25P2aLlv+wmp7WLHkiCc0NXZkzYmoOVLAbgROJ67yPFsYVEMtliBkI0kpK3n0Oquw4Zw22a8+FAHvfVwuuXr5yjnESd4f5rA37GmNSLx3LEiJ1kApOVHRdv0OcDeMrUmnoAXFvONFhFJDLvBDxb/VfLUiZYek5/5q7z2ycwvPuG9jkUJE7ogND8LzGEVQlcW61dLM1nsdeZkJVPt+N/meGmneWTUTdwzh1CR0HJExAdo3ll2B1O+0lteQj8UXZqj55Dg4C2DAfCeKntacMSP6HMoT09Za3Bm4t1LIg9k9UJfLylq2pMiBnoLlovbJpvqQZ4GK5mUkzL6cwSM2iXKmP999mjS5nx+0PxNF7L28LSiwytFcD/r7WFCTSZlNK+RCe5LIf0R3oxzDCNfh5Xe8iq4U+bkDTf4d7nSuU3qyR6/+h6K7PI/VxxVgy59ZHtok4K8AaatWZ0H8hhy4PGIyhOO84wIZcvpXr4lSMUYAkVWPPBTxeDoszhTa5cNnDAOqZO7KKL3dQDEEEqpgy+9vtPDX+ROCLgcEFjayJ0pkbcinK9NQCFWbNjfW0AoWV3ixzRXf7AdXrT6Nhuf5JtZ6iUOQsdwdOdO/UFpWwUTkRJn8d0=",
+        "p": null,
+        "q": null,
+        "qi": null,
+        "t": null,
+        "x": null,
+        "y": null
+      },
+      "keyId": "https://massdriveridp.vault.azure.net/keys/idpkey/fb6767b65d8b418fae2f31bd9cf790ba"
+    }
+  },
+  "customers": {}
+}

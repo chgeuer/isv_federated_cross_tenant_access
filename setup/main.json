@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.22.6.54827",
-      "templateHash": "11471007457404345983"
+      "version": "0.23.1.45101",
+      "templateHash": "665502260700624410"
     }
   },
   "parameters": {
@@ -40,8 +40,8 @@
   },
   "variables": {
     "$fxv#0": {
-      "issuer": "https://chgeuer.blob.core.windows.net/public",
-      "subject": "whatever",
+      "subject": "massdriver",
+      "issuer": "https://k5jl6cugzhroo4.blob.core.windows.net/public",
       "audience": "api://AzureADTokenExchange"
     },
     "oidcConfiguration": "[variables('$fxv#0')]"
@@ -72,8 +72,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.22.6.54827",
-              "templateHash": "17767234069307898863"
+              "version": "0.23.1.45101",
+              "templateHash": "14439090964876191436"
             }
           },
           "parameters": {
@@ -136,8 +136,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.22.6.54827",
-              "templateHash": "2193865655874841905"
+              "version": "0.23.1.45101",
+              "templateHash": "2416617114130742111"
             }
           },
           "parameters": {
@@ -262,8 +262,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.22.6.54827",
-              "templateHash": "6205981609607485196"
+              "version": "0.23.1.45101",
+              "templateHash": "16401370901938409968"
             }
           },
           "parameters": {

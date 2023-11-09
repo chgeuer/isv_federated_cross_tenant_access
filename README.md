@@ -100,5 +100,5 @@ curl --include https://hp.geuer-pollmann.de:3000/
 
 ## Terraform local token
 
-
+As an alternative to the interactive fetching of an access token from a local IdP (using the `oidc_request_url and oidc_request_token` settings), one can also set a `oidc_token_file_path` for Terraform, where Terraform can find a valid token to talk to the customer's Microsoft Entra tenant.
 
