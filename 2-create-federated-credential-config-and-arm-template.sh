@@ -1,7 +1,7 @@
 #!/bin/bash
 
-
 subject="$1"
+
 idp="$( cat ./isv-configuration/config.json | jq -r '.publisher.idp.issuer' )"
 
 echo "{}"                                  | \

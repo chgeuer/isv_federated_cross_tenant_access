@@ -22,11 +22,7 @@ uami_id="$3"
                       
 self_issued_jwt="$( cat "${file}" )"
 
-echo "${self_issued_jwt}" | jq -R 'split(".") | (.[0], .[1]) | @base64d | fromjson'
-
 audience="https://management.azure.com/"
-
-
 
 customer_access_token="$( curl \
   --silent \

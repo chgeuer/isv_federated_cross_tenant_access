@@ -1,2 +1,4 @@
 /.vs
 /token.json
+/idpkey.pem
+/informationForTheISV.json
