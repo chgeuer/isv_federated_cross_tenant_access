@@ -62,33 +62,4 @@ put-value '.publisher.idp.issuer'                   "$( echo "${creationResult}"
 # exponent="AQAB"
 # key_id="key1"
 
-jwks_keys_name="jwks_uri/keys"
-openid_config_name=".well-known/openid-configuration"
-jwks_keys="${issuer_path}/${jwks_keys_name}"
-
-jwks_keys_json="$( echo "{}"                          | \
-  jq --arg x "${issuer_path}"                        '.keys[0].issuer=$x' | \
-  jq --arg x "${keyId}"                              '.keys[0].kid=$x'    | \
-  jq --arg x "$( echo "${keyJson}" | jq -r '.kty' )" '.keys[0].kty=$x'    | \
-  jq --arg x "$( echo "${keyJson}" | jq -r '.e' )"   '.keys[0].e=$x'      | \
-  jq --arg x "$( echo "${keyJson}" | jq -r '.n' )"   '.keys[0].n=$x'      | \
-  jq -c -M "." | iconv --from-code=ascii --to-code=utf-8 )"
-
-openid_config_json="$( \
-  echo '{"issuer":"","token_endpoint":"","jwks_uri":"","id_token_signing_alg_values_supported":["RS256"],"token_endpoint_auth_methods_supported":["client_secret_post"],"response_modes_supported":["form_post"],"response_types_supported":["id_token"],"scopes_supported":["openid"],"claims_supported":["sub","iss","aud","exp","iat","name"]}' | \
-  jq --arg x "${issuer_path}"  '.issuer=$x'         | \
-  jq --arg x "${issuer_path}"  '.token_endpoint=$x' | \
-  jq --arg x "${jwks_keys}"    '.jwks_uri=$x'       | \
-  jq -c -M "." | iconv --from-code=ascii --to-code=utf-8 )"
-
-az storage blob upload \
-  --overwrite --no-progress \
-  --account-name "${idp_storage_account_name}" --container-name "${idp_storage_container_name}" \
-  --content-type "application/json" \
-  --name "${jwks_keys_name}" --data "${jwks_keys_json}" > /dev/null 2>&1
-
-az storage blob upload \
-  --overwrite \
-  --account-name "${idp_storage_account_name}" --container-name "${idp_storage_container_name}" \
-  --content-type "application/json" \
-  --name "${openid_config_name}" --data "${openid_config_json}" > /dev/null 2>&1
+./1b-upload-issuer-files.sh
